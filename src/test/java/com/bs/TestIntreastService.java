@@ -6,16 +6,15 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
+import org.junit.Ignore; 
 import org.junit.Test;
 
 public class TestIntreastService {
-  private IntreastService is=new IntreastService();
+    private IntreastService is=new IntreastService();
 
 	@Test(timeout = 5000)
 	public void testgetCivilScore() {
 		int n=is.getCivilScore();
-		System.out.println(n);
 	}
 	
 	
@@ -44,9 +43,7 @@ public class TestIntreastService {
      @Ignore
      @Test
      public void testgetIFSCNull()
-     {
-    	 System.out.println("otestgetIFSCNull().....");
-    		
+     {  		
     	 String actual=is.getIFSC("delhi");
     	 assertNull(actual);
      }
@@ -54,14 +51,12 @@ public class TestIntreastService {
      @Test
      public void testgetIFSCNotNull()
      {
-    	 System.out.println("testgetIFSCNotNull()");
     	 String actual=is.getIFSC("bhopal");
     	 assertNotNull(actual);
      }
      @Test
      public void testLoanEligibilityPositve()
      {
-    	 System.out.println("testLoanEligibilityPositve()");
     	 boolean actual=is.LoanEligilibity(60000);
          assertTrue(actual);
 //    	 boolean expected=true;
@@ -71,16 +66,13 @@ public class TestIntreastService {
      @Test
      public void testLoanEligibilityNegative()
      {
-    	 System.out.println("testLoanEligibilityNegative()");
     	 boolean actual=is.LoanEligilibity(40000);
-    	 
     	 assertFalse(actual);
      }
 	@Test
 	public void testIntreastComputeForMoreThanFiveYears() 
 	{
 		
-		 System.out.println("testIntreastComputeForMoreThanFiveYears()");
 		 IntreastService is=new IntreastService();
          int actual=is.IntreastCompute(10000,6);
          int expected=6000;
@@ -91,7 +83,6 @@ public class TestIntreastService {
 	public void testIntreastComputeForLessThanFiveYears()
 	{
 		
-		 System.out.println("testIntreastComputeForLessThanFiveYears()");
 		 IntreastService is=new IntreastService();
          int actual=is.IntreastCompute(10000,4);
          int expected=3200;
@@ -103,7 +94,6 @@ public class TestIntreastService {
 	public void testIntreastComputeoForNegativeTime()
 	{
 		
-		 System.out.println("testIntreastComputeoForNegativeTime()");
 		 IntreastService is=new IntreastService();
          int actual=is.IntreastCompute(10000,-4);
          int expected=0;
@@ -114,7 +104,6 @@ public class TestIntreastService {
 	public void testIntreastComputeoForNegativeTimeException()
 	{
 		
-		 System.out.println("testIntreastComputeoForNegativeTime()");
 		 IntreastService is=new IntreastService();
          int actual=is.IntreastCompute(10000,-4);
         
